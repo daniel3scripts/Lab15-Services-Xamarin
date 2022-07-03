@@ -17,6 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\" />
+    <EmbeddedResource Update="Views\TodoItemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TodoListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -20,9 +20,9 @@ namespace TodoRest.Data
         public RestService()
         {
 #if DEBUG
-            client = new HttpClient();
-            DependencyService.Get<IHttpClientHandlerService>()
-                .GetInsecureHandler();
+            client = new HttpClient
+            (DependencyService.Get<IHttpClientHandlerService>()
+                .GetInsecureHandler());
 #else
             client = new HttpClient();
 #endif
@@ -32,7 +32,7 @@ namespace TodoRest.Data
             Items = new List<TodItem>();
             string action = "Get";
 
-            var uri=new  Uri(string.Format(Constants.RestUrl, action));
+            var uri = new  Uri(string.Format(Constants.RestUrl, action));
             try
             {
                 var response = await client.GetAsync(uri);
@@ -61,7 +61,7 @@ namespace TodoRest.Data
                 HttpResponseMessage response = null;
                 if (isNewItem)
                 {
-                    var uri =new Uri(string.Format(Constants.RestUrl,"Create")); 
+                    var uri =new Uri(string.Format(Constants.RestUrl2,"Create"));  
                     response= await client.PostAsync(uri,content);
                 }
                 else
@@ -81,7 +81,7 @@ namespace TodoRest.Data
         }
         public async Task DeleteTodoItemAsync(string id)
         {
-            var uri = new Uri(string.Format(Constants.RestUrl, id));
+            var uri = new Uri(string.Format(Constants.RestUrl3, id)); 
             try
             {
                 var response =await client.DeleteAsync(uri);

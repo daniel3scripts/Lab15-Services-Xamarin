@@ -10,6 +10,6 @@ namespace TodoRest.Model
         public string Name { get; set; }
 
         public string Notes { get; set; }
-        public string Done { get; set; }
+        public bool Done { get; set; }
     }
 }
