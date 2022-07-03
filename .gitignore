@@ -1,4 +1,7 @@
 .vs
-/bin
-/obj
+/TodoRest//bin
+/TodoRest/obj
+/TodoRest.Android/obj
+/TodoRest.Android/bin
 .nuget
+.csproj
